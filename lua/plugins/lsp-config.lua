@@ -28,7 +28,7 @@ return {
       vim.lsp.config('clangd', { capabilities = capabilities })
 
       -- 2. Explicitly enable the configured servers
-      local servers = { 'ts_ls', 'solargraph', 'html', 'lua_ls' }
+      local servers = { 'ts_ls', 'solargraph', 'html', 'lua_ls', 'zls', 'clangd' }
       for _, server in ipairs(servers) do
         vim.lsp.enable(server)
       end

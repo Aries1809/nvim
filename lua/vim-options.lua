@@ -42,8 +42,8 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
       vim.opt_local.shiftwidth = 2
     else
       vim.opt_local.expandtab = false
-      vim.opt_local.tabstop = 2
-      vim.opt_local.shiftwidth = 2
+      vim.opt_local.tabstop = 4
+      vim.opt_local.shiftwidth = 4
     end
   end
 })

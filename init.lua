@@ -9,6 +9,10 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
+vim.opt.mousescroll = "ver:1,hor:1"
+vim.opt.title = true
+
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
