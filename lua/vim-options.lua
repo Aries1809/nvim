@@ -34,16 +34,21 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = "*",
   callback = function()
     local current_file_path = vim.fn.expand('%:p')
-    local excluded_dir = vim.fn.expand("~/nerdstuff/42")
+    local c_dir = vim.fn.expand("~/nerdstuff/42/c")
+    local python_dir = vim.fn.expand("~/nerdstuff/42/python")
 
-    if not string.find(current_file_path, excluded_dir, 1, true) then
-      vim.opt_local.expandtab = true
-      vim.opt_local.tabstop = 2
-      vim.opt_local.shiftwidth = 2
-    else
+    if string.find(current_file_path, c_dir, 1, true) then
       vim.opt_local.expandtab = false
       vim.opt_local.tabstop = 4
       vim.opt_local.shiftwidth = 4
+    elseif string.find(current_file_path, python_dir, 1, true) then
+      vim.opt_local.expandtab = true
+      vim.opt_local.tabstop = 4
+      vim.opt_local.shiftwidth = 4
+    else
+      vim.opt_local.expandtab = true
+      vim.opt_local.tabstop = 2
+      vim.opt_local.shiftwidth = 2
     end
   end
 })

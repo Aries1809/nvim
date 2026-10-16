@@ -26,9 +26,10 @@ return {
       vim.lsp.config('lua_ls', { capabilities = capabilities })
       vim.lsp.config('zls', { capabilities = capabilities })
       vim.lsp.config('clangd', { capabilities = capabilities })
+      vim.lsp.config('pyright', { capabilities = capabilities })
 
       -- 2. Explicitly enable the configured servers
-      local servers = { 'ts_ls', 'solargraph', 'html', 'lua_ls', 'zls', 'clangd' }
+      local servers = { 'ts_ls', 'solargraph', 'html', 'lua_ls', 'zls', 'clangd', 'pyright' }
       for _, server in ipairs(servers) do
         vim.lsp.enable(server)
       end
